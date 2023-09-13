@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<body>
+    <section>
+    <div class="overlay"></div>
+    <header>
+        
+        <div class="nav">
+            <ul class="menu">
+                <li><a href="#" onclick="imgSlider('8.png');changeBgColor('#6aaa00')">DIET PEPSI WILD CHERRY</a></li>
+                <li><a href="#" onclick="imgSlider('2.png');changeBgColor('#e63c2c')">PEPSI MANGO</a></li>
+                <li><a href="#" onclick="imgSlider('3.png');changeBgColor('#1e1e1e')">PEPSI ZERO SUGAR</a></li>
+                <li><a href="#" onclick="imgSlider('4.png');changeBgColor('#FF0066')">PEPSI ZERO SUGAR WILD CHERRY</a></li>
+            </ul>
+          <i class="fa fa-times" id="close"></i>
+        </div>
+        
+        <i class="fa fa-bars" id="open"></i>
+    </header>
+    </section>
+
+    <section class="content" id ="1">
+        <div class="info-bx">
+            <h1>Phlathip Kraisang</h1>
+            <p>Lorem ipsum dolor sit amet consectetur 
+                adipisicing elit. Consequuntur quis ea in, 
+                voluptate repudiandae voluptates recusandae
+                 perferendis itaque qui odit quo assumenda, 
+                 eligendi consectetur ab libero quibusdam 
+                 accusantium! Minus, explicabo?</p>
+                 <div class="btn-bx">
+                    <button> <a href="https://www.pepsi.com/">Shop Now</a></button>
+                 </div>
+        </div>
+        <div class="img-bx">
+            <img src="1.png" class="pepsi" width="50%">
+        </div>
+    </section>
+    <script>
+        const open = document.querySelector('#open');
+        const close = document.querySelector('#close');
+        const nav = document.querySelector('.nav');
+       
+
+        open.onclick = function(){
+            nav.classList.add('active');
+        }
+        close.onclick = function(){
+            nav.classList.remove('active');
+        }
+
+        window.addEventListener('scroll',function(){
+            var header = document.querySelector('header');
+            header.classList.toggle("float", window.scrollY > 10);
+        });
+    </script>
+
+<script type="text/javascript">
+    function imgSlider(anything){
+        document.querySelector('.pepsi').src = anything;
+    }
+    function changeBgColor(color){
+        const sec = document.querySelector('.overlay');
+        sec.style.background = color;
+    }
+
+</script>
+
+</body>
+</html>
